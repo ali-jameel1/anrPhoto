@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="/photos/ANR/LOGO.jpg" type="image/jpg">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1><img src="/photos/ANR/LOGOLINKEDINblack.png" alt="Logo" class="logo"> ANR Photography</h1>
+        <div class="menu">
+            <a id="home-link" href="home">Home</a>
+            <a id="people-link" href="people">People</a>
+            <a id="scene-link" href="scenes">Scenes</a>
+            <a id="prints-link" href="prints">Prints</a>
+            <a id="about-link" href="about">About</a>
+            <a id="booknow-link" href="booknow" style="font-weight: bold; color: #000000;">Book Now</a>
+            <a id="contact-link" href="contact">Contact</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="pricing-booking-container">
+            <div class="pricing">
+                <div class="pricing-section">
+                    <h2 class="pricing-title">Pricing</h2>
+                    <p class="pricing-details">Here are some details about pricing...</p>
+                    <div class="flex-container">
+                        <ul>
+                            <p class="pricing-details">Headshots and photoshoots</p>
+                            <li class="price-point">1 Person Session.................. $50.00 per hour</li>
+                            <li class="price-point">2 People Session...................$90.00 per hour</li>
+                            <li class="price-point">3 People Session...................$130.00 per hour</li>
+                            <li class="price-point">4 or more people..................$150.00 per hour</li>
+                            <li class="price-point long">+ $15 for touch-ups and editing ex. removing blemishes,
+                                lighting correction, black & whites,
+                                etc.)</li>
+                        </ul>
+                        <img id="me-image" src="/photos/me.jpg" alt="Contact">
+
+                    </div>
+
+                    <div class="flex-container">
+                        <img id="me-image" src="/photos/events.jpg" alt="Contact">
+                        <ul>
+                            <p class="price-point long">Parties and Events
+                                Sweet Sixteen, Quinceaneras, Birthdays, Graduation Parties, and more!</p>
+                            <li class="price-point">1 Photographer......................$300.00</li>
+                            <li class="price-point">2 Photographers......................$450.00</li>
+                            <li class="price-point long">Retouching and Editing .....+$50.0
+                                (includes removing blemishes, lighting correction, black & whites, etc.)</li>
+                        </ul>
+                    </div>
+                    <p class="pricing-details">Wedding</p>
+
+                    <p class="weddingSec"> ​
+                        Your wedding day should be exactly the way you envision it to be and I would love to make the
+                        vision
+                        come to life. We can further discuss details regarding your special day in order to cater to
+                        your
+                        needs, making it special and unique for both you and your significant other. Please feel free to
+                        contact me for detailed pricing and prices may vary depending on venus size, bridal party, etc.
+                    </p>
+
+
+                </div>
+            </div>
+
+            <div class="booking">
+                <div class="booking-section">
+                    <h2 class="booking-title">Book a Session</h2>
+
+                    <select id="booking-type" onchange="showCalendar()">
+                        <option value="">Select a photoshoot type</option>
+                        <option value="1hour">1 Hour Photoshoot</option>
+                        <option value="2hour">2 Hour Photoshoot</option>
+                        <option value="3hour">3 Hour Photoshoot</option>
+                        <option value="1photographer">1 Photographer Event</option>
+                        <option value="2photographer">2 Photographer Event</option>
+                    </select>
+
+                    <!-- The divs for the calendars will be here -->
+                    <div id="1hour-calendar" class="calendar" style="display: none;">
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/anrphoto/1-hour-photoshoot?background_color=f3f3f3&primary_color=333333"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <div id="2hour-calendar" class="calendar" style="display: none;">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/anrphoto/2-hour-photoshoot?background_color=f3f3f3&primary_color=333333"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <div id="3hour-calendar" class="calendar" style="display: none;">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/anrphoto/3-hour-photoshoot?background_color=f3f3f3&primary_color=333333"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <div id="1photographer-calendar" class="calendar" style="display: none;">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/anrphoto/1-photographer-event?background_color=f3f3f3&primary_color=333333"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <div id="2photographer-calendar" class="calendar" style="display: none;">
+                        <!-- Calendly inline widget begin -->
+                        <div class="calendly-inline-widget"
+                            data-url="https://calendly.com/anrphoto/2-photographer-event?background_color=f3f3f3&primary_color=333333"
+                            style="min-width:320px;height:700px;"></div>
+                        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                            async></script>
+                        <!-- Calendly inline widget end -->
+                    </div>
+
+                    <!-- Repeat for each photoshoot type -->
+
+                </div>
+
+                <script>
+                    function showCalendar() {
+                        // Hide all calendars
+                        var calendars = document.getElementsByClassName('calendar');
+                        for (var i = 0; i < calendars.length; i++) {
+                            calendars[i].style.display = 'none';
+                        }
+
+                        // Show the selected calendar
+                        var bookingType = document.getElementById('booking-type').value;
+                        if (bookingType) {
+                            document.getElementById(bookingType + '-calendar').style.display = 'block';
+                        }
+                    }
+                </script>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+
+</body>
+
+</html>

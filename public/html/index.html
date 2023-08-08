@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANR Photography</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="/photos/ANR/LOGO.jpg" type="image/jpg">
+</head>
+
+<body>
+    <div class="main-container">
+        <h1><img src="/photos/ANR/LOGOLINKEDINblack.png" alt="Logo" class="logo"> ANR Photography</h1>
+        <div class="menu">
+            <a id="home-link" href="home" style="font-weight: bold; color: #000000;">Home</a>
+            <a id="people-link" href="people">People</a>
+            <a id="scene-link" href="scenes">Scenes</a>
+            <a id="prints-link" href="prints">Prints</a>
+            <a id="about-link" href="about">About</a>
+            <a id="booknow-link" href="booknow">Book Now</a>
+            <a id="contact-link" href="contact">Contact</a>
+        </div>
+    </div>
+    <div class="home-content">
+        <div class="slider">
+            <a href="#" class="slider-btn slider-btn--left">&lt;</a>
+            <div class="slider-content">
+                <div class="slider-item active">
+                    <img class="slider-image" src="/photos/people/homepage.jpg" alt="Image 1">
+                    <div class="slider-label">People</div>
+                    <a href="people" class="slider-button">View more</a>
+                </div>
+                <div class="slider-item">
+                    <img class="slider-image" src="/photos/scenes/homepage2.jpg" alt="Image 2">
+                    <div class="slider-label">Scenes</div>
+                    <a href="scenes" class="slider-button">View more</a>
+                </div>
+            </div>
+            <a href="#" class="slider-btn slider-btn--right">&gt;</a>
+        </div>
+    </div>
+    <div class="about-section">
+        <h2>Meet Abdullah Rana</h2>
+        <div class="about-content">
+            <div class="about-textintro">
+                <p> A passionate graduate from the University of Connecticut, with a deep
+                    fascination for the art of photography.</p>
+
+                <p> Through the lens of his camera, unveils the captivating transformation of ordinary entities into
+                    extraordinary masterpieces,
+                    revealing his unique perspective to the world.</p>
+                <p> Life's abundance and beauty are beautifully captured, cherishing every precious moment with
+                    the perfect click, creating timeless memories that last a lifetime.</p>
+                <p> Step into Abdullah's world, where every snapsh
+                    ot tells a story, and the essence of life is
+                    immortalized with each shot
+                    –
+                    a world where art and vision intertwine seamlessly, just one click
+                    away from mesmerizing you</p>
+            </div>
+
+            <img src="/photos/ANR/me.jpg" alt="About Me Image">
+        </div>
+    </div>
+
+
+    <script>
+        var sliderImages = Array.from(document.querySelectorAll('.slider-image'));
+        var sliderItems = Array.from(document.querySelectorAll('.slider-item')); // Add this line
+        var currentIndex = 0;
+
+        // Show the first image
+        sliderImages[currentIndex].style.display = 'block';
+        sliderItems[currentIndex].classList.add('active'); // Add this line
+
+        function updateActiveItem() {
+            sliderItems.forEach((item, index) => {
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            sliderImages[currentIndex].style.display = 'none';
+            sliderItems[currentIndex].classList.remove('active'); // Add this line
+            currentIndex++;
+            if (currentIndex >= sliderImages.length) {
+                currentIndex = 0;
+            }
+            sliderImages[currentIndex].style.display = 'block';
+            sliderItems[currentIndex].classList.add('active'); // Add this line
+        }
+
+        document.querySelector('.slider-btn--left').addEventListener('click', function (event) {
+            event.preventDefault();
+            clearInterval(autoSlideInterval); // Stop auto slide when manual navigation is used
+            sliderImages[currentIndex].style.display = 'none';
+            sliderItems[currentIndex].classList.remove('active'); // Add this line
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = sliderImages.length - 1;
+            }
+            sliderImages[currentIndex].style.display = 'block';
+            sliderItems[currentIndex].classList.add('active'); // Add this line
+            autoSlideInterval = setInterval(nextSlide, 5000); // Restart auto slide
+        });
+
+        document.querySelector('.slider-btn--right').addEventListener('click', function (event) {
+            event.preventDefault();
+            clearInterval(autoSlideInterval); // Stop auto slide when manual navigation is used
+            nextSlide();
+            autoSlideInterval = setInterval(nextSlide, 5000); // Restart auto slide
+        });
+
+        // Start auto slide
+        var autoSlideInterval = setInterval(nextSlide, 5000);
+
+    </script>
+
+
+</body>
+
+</html>

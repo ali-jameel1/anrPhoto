@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prints</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" href="/photos/ANR/LOGO.jpg" type="image/jpg">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <h1><img src="/photos/ANR/LOGOLINKEDINblack.png" alt="Logo" class="logo"> ANR Photography</h1>
+        <div class="menu">
+            <a id="home-link" href="home">Home</a>
+            <a id="people-link" href="people">People</a>
+            <a id="scene-link" href="scenes">Scenes</a>
+            <a id="prints-link" href="prints" style="font-weight: bold; color: #000000;">Prints</a>
+            <a id="about-link" href="about">About</a>
+            <a id="booknow-link" href="booknow">Book Now</a>
+            <a id="contact-link" href="contact">Contact</a>
+        </div>
+    </div>
+    <div class="gallery-container">
+        <p class="prints-message">Click on an image you like!</p>
+        <div id="gallery"></div>
+    </div>
+
+    <script>
+
+        var stripe = Stripe('pk_live_51NcOFoKM0JyveRgIS1JVO56i4ZXuszIpO3gBNipqkjzDZo7grqv41OjxUbTfKjjYIQNEcd9YNqSnydfqCRJszEZw00wu2v52hf');
+
+        // Put your images in this array
+        const images = [
+            '/photos/Prints/DSC_1619-Enhanced.jpg',
+            '/photos/Prints/THECITY.jpg',
+            '/photos/Prints/DSC_9491.jpg',
+            '/photos/Prints/DSC_1659-Enhanced-SR.jpg',
+            '/photos/Prints/DSC_3167.jpg',
+            '/photos/Prints/DSC_8354.jpg',
+            '/photos/Prints/DSC_3652.jpg',
+            '/photos/Prints/DSC_95033.jpg',
+            '/photos/Prints/DSC_3370.jpg',
+            '/photos/Prints/DSC_3401.jpg',
+            '/photos/Prints/DSC_1189-Enhanced-SR.jpg',
+            '/photos/Prints/DSC_4150.jpg',
+            '/photos/Prints/DSC_7307.jpg',
+            '/photos/Prints/DSC_2704.jpg',
+            '/photos/Prints/DSC_3007.jpg',
+            // add as many images as you want
+        ];
+
+        var gallery = document.getElementById('gallery');
+
+        for (var i = 0; i < images.length; i++) {
+            var img = document.createElement('img');
+            img.src = images[i];
+            img.classList.add('gallery-image'); // Add this line to add the class to your images
+            gallery.appendChild(img);
+            img.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+
+            img.onclick = async function () {
+                const response = await fetch('/create-checkout-session', { method: 'POST' });
+                const session = await response.json();
+                const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+                if (result.error) {
+                    alert(result.error.message);
+                }
+            };
+
+        }
+    </script>
+</body>
+
+</html>
