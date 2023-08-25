@@ -2,9 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const nodemailer = require('nodemailer');
-// const google = require('googleapis');
-
-// import { google } from "googleapis"
 
 const app = express();
 
@@ -81,31 +78,36 @@ app.post('/send-email', (req, res) => {
 });
 
 app.post('/create-checkout-session', async (req, res) => {
+    const { image } = req.body; // Get the image URL from the query parameter
+
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
+        shipping_address_collection: {
+            allowed_countries: ['US', 'CA'], // List of allowed countries for shipping
+        },
         line_items: [
             {
-                // replace this with your product information
                 price_data: {
-                    currency: 'cad',
+                    currency: 'usd',
                     product_data: {
                         name: 'Buy this print!',
+                        images: ['https://www.anrphoto.com/' + image]
                     },
-                    unit_amount: 200, // price in cents
+                    unit_amount: 7999,
                 },
                 quantity: 1,
             },
         ],
         mode: 'payment',
-        success_url: 'https://www.google.com/',
-        cancel_url: 'https://www.google.com/',
+        success_url: 'https://www.anrphoto.com/prints',
+        cancel_url: 'https://www.anrphoto.com/prints',
     });
 
     res.json({ id: session.id });
 });
 
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

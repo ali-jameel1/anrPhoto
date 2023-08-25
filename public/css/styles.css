@@ -1,292 +1,686 @@
 @import url('https://fonts.googleapis.com/css2?family=TimesNewRoman:wght@200;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Lora&family=Merriweather:wght@300&family=Raleway:wght@200;400&display=swap');
 
-* {
-    box-sizing: border-box;
+@media only screen and (min-width: 768px) {
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'TimesNewRoman', sans-serif;
+        color: #333;
+        background-color: #f5f1ee;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-rows: 15% 85%;  /* Adjust these values as needed */
+        height: 100vh;
+    }
+
+    .main-container {
+        grid-column: 1;
+        background-color: #f5f1ee;
+        padding: 20px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Adjusts vertical alignment */
+        /* font-family: 'Cormorant Garamond', serif; */
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .logo {
+        height: 1.5em; /* Adjusts the logo height to match the text height */
+        vertical-align: middle; /* Aligns the logo vertically with the text */
+    }
+
+
+    .menu {    
+        font-family: 'Raleway', sans-serif;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu a {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.2em;
+        font-weight: 200;
+        text-decoration: none;
+        color: #333;
+        margin: 0 20px;  /* Adjust the margin to space out the menu items */
+    }
+
+    .menu a:hover {
+        font-weight: bold;
+    }
+
+    .pricing-booking-container{
+        background-color: #eae4dd;
+        width: 100%;
+        justify-content: center;
+        display: grid;
+    }
+
+    .home-content {
+        background-color: #eae4dd;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        max-height: 90%;
+    }
+
+    .slider {
+        position: relative;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-image 1s ease-in-out;
+    }
+
+    .slider-content {
+        width: 50%;
+        display: flex;
+    }
+
+    .slider-item {
+        flex: 0 0 100%;
+        width: 100%;
+        position: relative;
+        display: none; /* Hide all slides by default */
+    }
+
+    .slider-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;    
+    }
+
+    .slider-label, .slider-button {
+        position: absolute;
+        color: white;
+        text-align: center;
+        width: 100%;
+    }
+
+    .slider-label {
+        margin-left: 40%;
+        top: 5%;
+        transform: translateY(-50%);
+        font-size: 2em;
+        color: black;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .slider-button {
+        margin-left: 2.5%;
+        bottom: 20px;
+        background-color: rgba(0,0,0,0.7);
+        padding: 7.5px;
+        text-decoration: none;
+        background-color: #f5f1ee;
+        color: black;
+        max-width: 100px;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        background-color: #f5f1ee;
+        border: none;
+        color: #000000;
+        padding: 15px 30px;
+        cursor: pointer;
+        transform: translateY(-50%);
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 25px;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .slider-btn:hover {
+        background-color: #f8f8f8;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .slider-btn:focus {
+        outline: none;
+    }
+
+
+    .slider-item.active {
+        display: block;
+    }
+
+    .slider-btn--left {
+        left: 10px;
+    }
+
+    .slider-btn--right {
+        right: 10px;
+    }
+
+
+    .see-more {
+        position: absolute;
+        bottom: 50px;
+        left: 400px;
+        background: white;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    .about-section {
+        padding-right: 20px;
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .about-section-page {
+        padding-right: 20px;
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+    }
+    
+
+    .about-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about-content p {
+        width: 40%;
+    }
+
+    .about-content img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    .about-textintro{
+        max-width: 100%;
+        margin-left: 20%;
+        /* display: flex; */
+        /* justify-content: space-around; */
+        align-items: center;
+    }
+
+
+    #contact-image {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+    }
+
+    .content {
+        font-family: 'Raleway', sans-serif;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #contact-form {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    #name, #email, #message {
+        flex: 1 1 calc(50% - 10px); /* each will take half of the space, -10px is for the gap */
+        box-sizing: border-box;
+        padding: 15px;
+        border-radius: 5px;
+        border: none;
+        background: #f0f0f0; /* A light grey background */
+        font-size: 1em;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    #message {
+        width: 100%;
+        flex: 1 0 100%; /* this will take the full width of the container */
+    }
+
+    button {
+        max-width: 120px;
+        margin-top: 10px;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background: #333; /* Button color */
+        color: #fff; /* Text color */
+        font-size: 1em;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-family: 'Raleway', sans-serif;
+    }
+
+    .flex-container {
+        display: flex;
+        align-items: start; /* Align items to the top */
+    }
+
+    .price-point {
+        max-width: 600px; /* adjust as needed */
+    }
+
+    .price-point.long {
+        max-width: 400px; /* adjust as needed */
+    }
+
+    .prints-message{
+
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .pricing-title{
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .booking-title{
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .contact-title{
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .weddingSec {
+        max-width: 800px; /* adjust as needed */
+    }
+
+    #me-image {
+        margin-top: 25px; /* adjust as needed */
+        width: 200px;
+        height: auto;
+    }
+
+    .gallery-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start; /* Aligns items to the start of the container */
+        margin-top: 40px;
+        background-color: #eae4dd;
+    }
+
+    .gallery-image {
+        width: 49%;
+        margin: 1% 0.5%; /* The first value is the top and bottom margin, the second value is the left and right margin */
+        height: auto;
+        object-fit: cover;
+        background-color: #333; /* Replace with any color or image you want */
+        background-size: cover;
+    }
+
+    .booking-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    #booking-type {
+        width: 50%; /* You can adjust this value to better fit your layout */
+        padding: 10px;
+        font-size: 16px; /* Adjust to suit your preferred typography */
+        border: 1px solid #888; /* Subtle border */
+        border-radius: 5px; /* Rounded corners */
+        appearance: none; /* This removes the default browser styling */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #fff; /* White background */
+        color: #333; /* Dark text */
+        outline: none; /* Remove outline */
+    }
+
+    #booking-type:focus {
+        border-color: #007BFF; /* Blue border when the dropdown is in focus */
+    }
+
+    #booking-type option {
+        color: #333; /* Dark text color for the options */
+    }
 }
 
-body {
-    font-family: 'TimesNewRoman', sans-serif;
-    color: #333;
-    background-color: #f5f1ee;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-rows: 15% 85%;  /* Adjust these values as needed */
-    height: 100vh;
-}
+@media only screen and (max-width: 768px) {
 
-.main-container {
-    grid-column: 1;
-    background-color: #f5f1ee;
-    padding: 20px;
-    height: 100vh;
+    .menu a {
+        font-family: 'Raleway', sans-serif;
+        display: block;
+        margin: 10px 0;
+        color: #333;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-container {
+        background-color: #f5f1ee;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .logo {
+        max-width: 50px;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .menu {
+        font-family: 'Raleway', sans-serif;
+        margin-top: 20px;
+    }
+
+    .menu a {
+        text-decoration: none;
+        margin: 0 10px;
+        color: #777;
+        transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+        color: #000;
+    }
+
+    .gallery-container {
+        margin: 20px auto;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 20px;
+        background-color: #f5f1ee;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .gallery-image:hover {
+        transform: scale(1.05);
+    }
+
+   /* CONTACT PAGE */
+
+
+.contact-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Adjusts vertical alignment */
-    /* font-family: 'Cormorant Garamond', serif; */
+    padding: 1rem 0.5rem;
+    background-color: #f5f1ee;
+    font-family: 'Raleway', sans-serif;
+}
+
+#contact-image {
+    width: 100%;
+    max-width: 800px;
+    display: block;
+    margin: 1rem auto;
+}
+
+#contact-form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #f5f1ee;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: none;
+}
+
+/* Book now page */
+
+.content {
+    margin-top: 2rem;
+}
+
+.pricing-booking-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex-direction: column;
     font-family: 'Cormorant Garamond', serif;
+    background-color: #f5f1ee;
+    text-align: center;
 }
 
-.logo {
-    height: 1.5em; /* Adjusts the logo height to match the text height */
-    vertical-align: middle; /* Aligns the logo vertically with the text */
+.pricing-section, .booking-section {
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
 }
 
+.pricing-title, .booking-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
 
-.menu {    
-    font-family: 'Raleway', sans-serif;
-    width: 100%;
+.pricing-details {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flex-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+    /* padding-right: 40px; */
 }
 
-.menu a {
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.2em;
-    font-weight: 200;
-    text-decoration: none;
-    color: #333;
-    margin: 0 20px;  /* Adjust the margin to space out the menu items */
+ul {
+    list-style-type: none;
 }
 
-.menu a:hover {
-    font-weight: bold;
+.price-point {
+    margin-bottom: 1rem;
 }
 
-.pricing-booking-container{
-    background-color: #eae4dd;
+.price-point.long {
+    font-style: italic;
+}
+
+#me-image {
+    height: auto;
+    max-width: 100%;
+    margin-top: 1rem;
+}
+
+.weddingSec {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.booking-section select {
     width: 100%;
-    justify-content: center;
-    display: grid;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
 }
 
-.home-content {
-    background-color: #eae4dd;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    max-height: 90%;
+.calendar {
+    display: none;
 }
+
+.calendly-inline-widget {
+    width: 100%;
+}
+
+/*HOME PAGE */
 
 .slider {
     position: relative;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-image 1s ease-in-out;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 20px auto;
 }
 
 .slider-content {
-    width: 50%;
     display: flex;
+    transition: transform 0.4s;
 }
 
 .slider-item {
     flex: 0 0 100%;
-    width: 100%;
     position: relative;
     display: none; /* Hide all slides by default */
 }
 
-.slider-image {
+.slider-item img {
     width: 100%;
-    height: auto;
-    object-fit: cover;    
-}
-
-.slider-label, .slider-button {
-    position: absolute;
-    color: white;
-    text-align: center;
-    width: 100%;
-}
-
-.slider-label {
-    margin-left: 40%;
-    top: 5%;
-    transform: translateY(-50%);
-    font-size: 2em;
-    color: black;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-.slider-button {
-    margin-left: 2.5%;
-    bottom: 20px;
-    background-color: rgba(0,0,0,0.7);
-    padding: 7.5px;
-    text-decoration: none;
-    background-color: #f5f1ee;
-    color: black;
-    max-width: 100px;
-    font-family: 'Cormorant Garamond', serif;
+    display: block;
 }
 
 .slider-btn {
     position: absolute;
     top: 50%;
-    background-color: #ffffff;
-    border: none;
-    color: #000000;
-    padding: 15px 30px;
-    cursor: pointer;
     transform: translateY(-50%);
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 25px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-}
-
-.slider-btn:hover {
-    background-color: #f8f8f8;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.slider-btn:focus {
-    outline: none;
-}
-
-
-.slider-item.active {
-    display: block;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 .slider-btn--left {
-    left: 10px;
+    left: 0;
 }
 
 .slider-btn--right {
-    right: 10px;
+    right: 0;
 }
 
-
-.see-more {
+.slider-label {
     position: absolute;
-    bottom: 50px;
-    left: 400px;
-    background: white;
-    padding: 10px;
-    text-decoration: none;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
 }
+
+.slider-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    background-color: #555;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.slider-item.active {
+    display: block; /* Show only the active slide */
+}
+
 
 .about-section {
-    padding-right: 20px;
-    text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: #f5f1ee;
     font-family: 'Cormorant Garamond', serif;
+    text-align: center;
 }
 
 .about-section-page {
-    padding-right: 20px;
-    text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    background-color: #f5f1ee;
     font-family: 'Cormorant Garamond', serif;
-    background-color: #eae4dd;
+    text-align: center;
 }
 
 .about-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+    background-color: #f5f1ee;
+    font-family: 'Raleway', sans-serif;
 }
 
-.about-content p {
-    width: 40%;
+.about-textintro {
+    flex: 0 1 60%;
+    margin-bottom: 20px;
+    flex: 1 1 100%;
+    background-color: #f5f1ee;
+}
+
+.about-textintro p {
+    margin-bottom: 20px;
+    background-color: #f5f1ee;
+    font-family: 'Raleway', sans-serif;
 }
 
 .about-content img {
-    max-width: 50%;
-    height: auto;
-}
-
-.about-textintro{
+    flex: 0 1 35%;
     max-width: 100%;
-    margin-left: 20%;
-    /* display: flex; */
-    /* justify-content: space-around; */
-    align-items: center;
-}
-
-
-#contact-image {
-    width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: cover;
-}
-
-.content {
-    font-family: 'Raleway', sans-serif;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contact-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contact-form {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-    box-sizing: border-box;
-}
-
-#name, #email, #message {
-    flex: 1 1 calc(50% - 10px); /* each will take half of the space, -10px is for the gap */
-    box-sizing: border-box;
-    padding: 15px;
-    border-radius: 5px;
-    border: none;
-    background: #f0f0f0; /* A light grey background */
-    font-size: 1em;
-    font-family: 'Raleway', sans-serif;
-}
-
-#message {
-    width: 100%;
-    flex: 1 0 100%; /* this will take the full width of the container */
-}
-
-button {
-    max-width: 120px;
-    margin-top: 10px;
-    width: 100%;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background: #333; /* Button color */
-    color: #fff; /* Text color */
-    font-size: 1em;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    font-family: 'Raleway', sans-serif;
-}
-
-.flex-container {
-    display: flex;
-    align-items: start; /* Align items to the top */
-}
-
-.price-point {
-    max-width: 600px; /* adjust as needed */
-}
-
-.price-point.long {
-    max-width: 400px; /* adjust as needed */
+    border-radius: 10px;
+    flex: 1 1 100%;
+    background-color: #f5f1ee;
 }
 
 .prints-message{
@@ -305,62 +699,4 @@ button {
 .contact-title{
     font-family: 'Cormorant Garamond', serif;
 }
-
-.weddingSec {
-    max-width: 800px; /* adjust as needed */
-}
-
-#me-image {
-    margin-top: 25px; /* adjust as needed */
-    width: 200px;
-    height: auto;
-}
-
-.gallery-container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start; /* Aligns items to the start of the container */
-    margin-top: 40px;
-    background-color: #eae4dd;
-}
-
-.gallery-image {
-    width: 49%;
-    margin: 1% 0.5%; /* The first value is the top and bottom margin, the second value is the left and right margin */
-    height: auto;
-    object-fit: cover;
-    background-color: #333; /* Replace with any color or image you want */
-    background-size: cover;
-}
-
-.booking-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    flex-direction: column;
-}
-
-#booking-type {
-    width: 50%; /* You can adjust this value to better fit your layout */
-    padding: 10px;
-    font-size: 16px; /* Adjust to suit your preferred typography */
-    border: 1px solid #888; /* Subtle border */
-    border-radius: 5px; /* Rounded corners */
-    appearance: none; /* This removes the default browser styling */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-color: #fff; /* White background */
-    color: #333; /* Dark text */
-    outline: none; /* Remove outline */
-}
-
-#booking-type:focus {
-    border-color: #007BFF; /* Blue border when the dropdown is in focus */
-}
-
-#booking-type option {
-    color: #333; /* Dark text color for the options */
 }
