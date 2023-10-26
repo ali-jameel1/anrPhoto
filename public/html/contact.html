@@ -5,21 +5,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/contact.css">
     <link rel="icon" href="/photos/ANR/LOGO.jpg" type="image/jpg">
 </head>
 
 <body>
-    <div class="main-container">
-        <h1><img src="/photos/ANR/LOGOLINKEDINblack.png" alt="Logo" class="logo"> ANR Photography</h1>
-        <div class="menu">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="main-container">
+            
+            <a class="navbar-brand" href="#"><img src="/photos/ANR/LOGOLINKEDIN.png" alt="Logo" class="logo">ANR Photography</a>
+
+            <!-- Hamburger button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menu items -->
+            <div class="menu">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a id="people-link" href="home">Home</a>
+                          </li>
+                          <li class="nav-item active">
+                            <a id="people-link" href="people">People</a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="scene-link" href="scenes">Scenes</a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="prints-link" href="products">Products</a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="prints-link" href="prints">Prints</a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="about-link" href="about">About</a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="booknow-link" href="booknow">Book Now</a>
+                          </li>
+                          <li class="nav-item">
+                            <a id="contact-link" href="contact" style="font-weight: bold; color: #000000;">Contact</a>
+                          </li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container-desk">
+        <h1><img src="/photos/ANR/LOGOLINKEDIN.png" alt="Logo" class="logo-desk"> ANR Photography</h1>
+        <div class="menu-desk">
             <a id="home-link" href="home">Home</a>
             <a id="people-link" href="people">People</a>
             <a id="scene-link" href="scenes">Scenes</a>
+            <a id="products-link" href="products">Products</a>
             <a id="prints-link" href="prints">Prints</a>
             <a id="about-link" href="about">About</a>
             <a id="booknow-link" href="booknow">Book Now</a>
-            <a id="contact-link" href="contact" style="font-weight: bold; color: #000000;">Contact</a>
+            <a id="contact-link" href="contact"  style="font-weight: bold; color: #000000;">Contact</a>
         </div>
     </div>
     <div class="content">
@@ -32,14 +80,14 @@
                 <input type="text" id="name" name="name" placeholder="Name" required>
                 <input type="email" id="email" name="email" placeholder="Email" required>
                 <textarea id="message" name="message" placeholder="Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <button class="send-button" type="submit">Send Message</button>
             </form>
         </div>
     </div>
 
     <script>
         document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the form from submitting normally
+            e.preventDefault(); 
 
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;

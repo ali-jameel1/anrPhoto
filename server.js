@@ -10,7 +10,6 @@ const stripe = require('stripe')('sk_live_51NcOFoKM0JyveRgIhmoOTvwQMMKpw94nM88gn
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-// Add this route handler
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/html/index.html'));
 });
@@ -27,8 +26,8 @@ app.get('/booknow', function (req, res) {
     res.sendFile(path.join(__dirname, '/public/html/book.html'));
 });
 
-app.get('/product', function (req, res) {
-    res.sendFile(path.join(__dirname, '/public/html/product.html'));
+app.get('/products', function (req, res) {
+    res.sendFile(path.join(__dirname, '/public/html/products.html'));
 });
 
 app.get('/people', function (req, res) {
@@ -78,22 +77,25 @@ app.post('/send-email', (req, res) => {
 });
 
 app.post('/create-checkout-session', async (req, res) => {
-    const { image } = req.body; // Get the image URL from the query parameter
+    const { image, size, price } = req.body;
+
+    const title = size === "12x18" ? "12X18 Glossy Print" : "11X14 Glossy Prin";
+    const priceInCents = Math.round(parseFloat(price) * 100);
 
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
         shipping_address_collection: {
-            allowed_countries: ['US', 'CA'], // List of allowed countries for shipping
+            allowed_countries: ['US'],
         },
         line_items: [
             {
                 price_data: {
                     currency: 'usd',
                     product_data: {
-                        name: 'Buy this print!',
+                        name: title,
                         images: ['https://www.anrphoto.com/' + image]
                     },
-                    unit_amount: 7999,
+                    unit_amount: priceInCents,
                 },
                 quantity: 1,
             },

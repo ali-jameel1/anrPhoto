@@ -1,76 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scenes</title>
+        <link rel="icon" href="/photos/ANR/LOGO.jpg" type="image/jpg">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/display.css"/>
+    </head>
+    
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="main-container">
+                
+                <a class="navbar-brand" href="#"><img src="/photos/ANR/LOGOLINKEDIN.png" alt="Logo" class="logo">ANR Photography</a>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scenes</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" href="/photos/ANR/LOGO.jpg" type="image/jpg">
-</head>
+                <!-- Hamburger button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-<body>
-    <div class="main-container">
-        <h1><img src="/photos/ANR/LOGOLINKEDINblack.png" alt="Logo" class="logo"> ANR Photography</h1>
-        <div class="menu">
-            <a id="home-link" href="home">Home</a>
-            <a id="people-link" href="people">People</a>
-            <a id="scene-link" href="scenes" style="font-weight: bold; color: #000000;">Scenes</a>
-            <a id="prints-link" href="prints">Prints</a>
-            <a id="about-link" href="about">About</a>
-            <a id="booknow-link" href="booknow">Book Now</a>
-            <a id="contact-link" href="contact">Contact</a>
+                <!-- Menu items -->
+                <div class="menu">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a id="people-link" href="home">Home</a>
+                              </li>
+                              <li class="nav-item active">
+                                <a id="people-link" href="people">People</a>
+                              </li>
+                              <li class="nav-item">
+                                <a id="scene-link" href="scenes" style="font-weight: bold; color: #000000;">Scenes</a>
+                              </li>
+                              <li class="nav-item">
+                                <a id="prints-link" href="products">Products</a>
+                              </li>
+                              <li class="nav-item">
+                                <a id="prints-link" href="prints">Prints</a>
+                              </li>
+                              <li class="nav-item">
+                                <a id="about-link" href="about">About</a>
+                              </li>
+                              <li class="nav-item">
+                                <a id="booknow-link" href="booknow">Book Now</a>
+                              </li>
+                              <li class="nav-item">
+                                <a id="contact-link" href="contact">Contact</a>
+                              </li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="main-container-desk">
+            <h1><img src="/photos/ANR/LOGOLINKEDIN.png" alt="Logo" class="logo-desk"> ANR Photography</h1>
+            <div class="menu-desk">
+                <a id="home-link" href="home">Home</a>
+                <a id="people-link" href="people">People</a>
+                <a id="scene-link" href="scenes" style="font-weight: bold; color: #000000;">Scenes</a>
+                <a id="products-link" href="products">Products</a>
+                <a id="prints-link" href="prints">Prints</a>
+                <a id="about-link" href="about">About</a>
+                <a id="booknow-link" href="booknow">Book Now</a>
+                <a id="contact-link" href="contact">Contact</a>
+            </div>
         </div>
-    </div>
-    <div class="gallery-container">
-        <div id="gallery"></div>
-    </div>
+        
+        <div class="gallery-container">
+            <div id="gallery"></div>
+        </div>
 
-    <script>
-        // Put your images in this array
-        const images = [
-            '/photos/Scenes/DSC_2838.jpg',
-            '/photos/Scenes/DSC_8732.jpg',
-            '/photos/Scenes/DSC_8739.jpg',
-            '/photos/Scenes/DSC_8144.jpg',
-            '/photos/Scenes/DSC_0934-Edit.jpg',
-            '/photos/Scenes/DSC_1304-Enhanced-SR.jpg',
-            '/photos/Scenes/DSC_7296.jpg',
-            '/photos/Scenes/DSC_3654.jpg',
-            '/photos/Scenes/DSC_3908.jpg',
-            '/photos/Scenes/DSC_4090.jpg',
-            '/photos/Scenes/DSC_4133.jpg',
-            '/photos/Scenes/DSC_4146.jpg',
+        <script>
+            const images = [
+                '/photos/Scenes/DSC_2838.jpg',
+                '/photos/Scenes/DSC_8732.jpg',
+                '/photos/Scenes/DSC_8739.jpg',
+                '/photos/Scenes/DSC_8144.jpg',
+                '/photos/Scenes/DSC_0934-Edit.jpg',
+                '/photos/Scenes/DSC_1304-Enhanced-SR.jpg',
+                '/photos/Scenes/DSC_7296.jpg',
+                '/photos/Scenes/DSC_3654.jpg',
+                '/photos/Scenes/DSC_3908.jpg',
+                '/photos/Scenes/DSC_4090.jpg',
+                '/photos/Scenes/DSC_4133.jpg',
+                '/photos/Scenes/DSC_4146.jpg',
 
-            '/photos/Scenes/DSC_8978.jpg',
-            '/photos/Scenes/DSC_9128.jpg',
-            '/photos/Scenes/DSC_8769.jpg',
-            '/photos/Scenes/DSC_1179.jpg',
-            '/photos/Scenes/DSC_8373.jpg',
-            '/photos/Scenes/DSC_8021.jpg',
+                '/photos/Scenes/DSC_8978.jpg',
+                '/photos/Scenes/DSC_9128.jpg',
+                '/photos/Scenes/DSC_8769.jpg',
+                '/photos/Scenes/DSC_1179.jpg',
+                '/photos/Scenes/DSC_8373.jpg',
+                '/photos/Scenes/DSC_8021.jpg',
 
 
-            '/photos/Scenes/DSC_9470.jpg',
-            '/photos/Scenes/DSC_2717.jpg',
-            '/photos/Scenes/DSC_2505.jpg',
-            '/photos/Scenes/DSC_3034.jpg',
-            '/photos/Scenes/DSC_7795.jpg',
-            '/photos/Scenes/DSC_3455.jpg',
-            // add as many images as you want
-        ];
+                '/photos/Scenes/DSC_9470.jpg',
+                '/photos/Scenes/DSC_2717.jpg',
+                '/photos/Scenes/DSC_2505.jpg',
+                '/photos/Scenes/DSC_3034.jpg',
+                '/photos/Scenes/DSC_7795.jpg',
+                '/photos/Scenes/DSC_3455.jpg',
+            ];
 
-        var gallery = document.getElementById('gallery');
+            var gallery = document.getElementById('gallery');
 
-        for (var i = 0; i < images.length; i++) {
-            var img = document.createElement('img');
-            img.src = images[i];
-            img.classList.add('gallery-image'); // Add this line to add the class to your images
-            gallery.appendChild(img);
-            img.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-            });
-        }
-    </script>
-</body>
-
+            for (var i = 0; i < images.length; i++) {
+                var img = document.createElement('img');
+                img.src = images[i];
+                img.classList.add('gallery-image');
+                gallery.appendChild(img);
+                img.addEventListener('contextmenu', function (e) {
+                    e.preventDefault();
+                });
+            }
+        </script>
+    </body>
 </html>

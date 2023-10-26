@@ -1,6 +1,5 @@
 var stripe = Stripe('pk_live_51NcOFoKM0JyveRgIS1JVO56i4ZXuszIpO3gBNipqkjzDZo7grqv41OjxUbTfKjjYIQNEcd9YNqSnydfqCRJszEZw00wu2v52hf');
 
-// Put your images in this array
 const images = [
     '/photos/Prints/DSC_1619-Enhanced.jpg',
     '/photos/Prints/THECITY.jpg',
@@ -17,7 +16,6 @@ const images = [
     '/photos/Prints/DSC_7307.jpg',
     '/photos/Prints/DSC_2704.jpg',
     '/photos/Prints/DSC_3007.jpg',
-    // add as many images as you want
 ];
 
 var gallery = document.getElementById('gallery');
@@ -32,22 +30,38 @@ for (var i = 0; i < images.length; i++) {
             e.preventDefault();
         });
 
-        img.onclick = async function () {
-            const response = await fetch('/create-checkout-session', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ image: images[i] }),
-            });
-            console.log(JSON.stringify({ image: images[i] }))
-
-            const session = await response.json();
-            const result = await stripe.redirectToCheckout({ sessionId: session.id });
-
-            if (result.error) {
-                alert(result.error.message);
-            }
+        img.onclick = function () {
+            $('#sizeModal').data('selected-image', images[i]);
+            $('#sizeModal').modal('show');
         };
     })(i);
 }
+
+document.querySelectorAll('[data-size]').forEach(button => {
+    button.addEventListener('click', async function() {
+        let size = this.getAttribute('data-size');
+        let price = this.getAttribute('data-price');
+
+        const selectedImage = $('#sizeModal').data('selected-image');
+        
+        $('#sizeModal').modal('hide');
+        
+        const response = await fetch('/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ image: selectedImage, size: size, price: price }),
+        });
+        
+        console.log(JSON.stringify({ image: selectedImage, size: size, price: price }));
+        
+        const session = await response.json();
+        const result = await stripe.redirectToCheckout({ sessionId: session.id });
+        
+        if (result.error) {
+            alert(result.error.message);
+        }
+    });
+});
+

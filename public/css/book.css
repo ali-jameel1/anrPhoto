@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=TimesNewRoman:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Lora&family=Merriweather:wght@300&family=Raleway:wght@200;400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'TimesNewRoman', sans-serif;
+    color: #333;
+    background-color: #f5f1ee;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    padding-top: 20px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    width: max-content;
+    flex-direction: column;
+    font-family: 'Cormorant Garamond', serif; 
+ } 
+
+.logo {
+    height: 1.5em;
+    vertical-align: middle;
+    margin-top: -0.25em;
+}
+
+.menu {    
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+    font-weight: 200;
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+}
+
+.menu a:hover {
+    font-weight: bold;
+}
+
+.navbar-light .navbar-toggler {
+    padding-top: 20px;
+    color: #f5f1ee;
+    border-color: transparent;
+    padding-left: 15px;
+}
+
+.navbar-toggler {
+    margin-left: 2px;
+    padding: unset;
+    font-size: 1.7rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    -ms-flex-wrap: none;
+    flex-wrap: none;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: none;
+    justify-content: center;
+    padding: 0em;
+    color: #b5a18d;
+    background-color: #f5f1ee;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.main-container-desk {
+    grid-column: 1;
+    background-color: #f5f1ee;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.logo-desk {
+    height: 1.5em;
+    vertical-align: middle;
+    margin-top: -0.25em;
+}
+
+.menu-desk {    
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-desk a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+    font-weight: 200;
+    text-decoration: none;
+    color: #333;
+    margin: 0 20px;
+}
+
+.menu-desk a:hover {
+    font-weight: bold;
+}
+
+
+/* DESKTOP VIEW */
+@media only screen and (min-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .main-container {
+        display: none;
+    }
+
+    .main-container-desk {
+        background-color: #f8f9fa;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .pricing-booking-container{
+        background-color: #eae4dd;
+        width: 100%;
+        justify-content: center;
+        display: grid;
+    }
+
+    .content {
+        font-family: 'Raleway', sans-serif;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: large;
+    }
+
+    .flex-container {
+        display: flex;
+        align-items: start; /* Align items to the top */
+    }
+
+    .price-point {
+        max-width: 600px; /* adjust as needed */
+    }
+
+    .price-point.long {
+        max-width: 400px; /* adjust as needed */
+    }
+
+    .pricing-title {
+        padding-top: 20px;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    .pricing-title[alt="pricing"] {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    .pricing-details[alt="weddings"] {
+        text-align: center;
+    }
+
+    .weddingSec {
+        font-size: large;
+        max-width: 800px;
+    }
+
+    #me-image {
+        margin-top: 25px;
+        width: 300px;
+        height: auto;
+    }
+
+    #me-image[alt="mobile"] {
+        display: none;
+    }
+
+    #me-image[alt="product"] {
+        margin-top: -0.35rem;
+        padding-bottom: 40px;
+    }
+
+    .pricing-intro {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .booking-title{
+        font-family: 'Cormorant Garamond', serif;
+        text-align: center;
+    }
+
+    .booking-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    #booking-type {
+        width: 50%; /* You can adjust this value to better fit your layout */
+        padding: 10px;
+        font-size: 16px; /* Adjust to suit your preferred typography */
+        border: 1px solid #888; /* Subtle border */
+        border-radius: 5px; /* Rounded corners */
+        appearance: none; /* This removes the default browser styling */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #fff; /* White background */
+        color: #333; /* Dark text */
+        outline: none; /* Remove outline */
+    }
+
+    #booking-type:focus {
+        border-color: #007BFF; /* Blue border when the dropdown is in focus */
+    }
+
+    #booking-type option {
+        color: #333; /* Dark text color for the options */
+    }
+
+    .booking-section {
+        display: flex;
+        flex-direction: column; /* stack children vertically */
+        justify-content: center; /* center items vertically */
+        align-items: center; /* center items horizontally */
+        width: 100%; /* to ensure it takes the full width of its parent */
+    }
+
+    .booking-type {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/* MOBILE VIEW */
+@media only screen and (max-width: 768px) {
+    .main-container-desk {
+        display: none;
+    }
+    
+    .menu-desk {
+        display: none;
+    }
+
+    #me-image[alt="desktop"] {
+        display: none;
+    }
+
+    .navbar-nav {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-left: 15px;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    #me-image {
+        height: auto;
+        max-width: 90%;
+        margin-top: 1rem;
+    }
+
+    #me-image-mobile {
+        height: auto;
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .pricing-booking-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        flex-direction: column;
+        font-family: 'Cormorant Garamond', serif;
+        background-color: #f5f1ee;
+        text-align: center;
+    }
+
+    .content {
+        font-family: 'Raleway', sans-serif;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-right: 25px;
+    }
+
+    .price-point.long {
+        max-width: 80%;
+        margin-left: 10%;
+    }
+
+    .booking-section {
+        padding: 2rem;
+        border: 1px solid #ddd;
+        border-radius: 0.25rem;
+    }
+
+    .booking-section select {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.25rem;
+    }
+
+    .pricing-title[alt="event"] {
+        padding-left: 40px;
+    }
+}
