@@ -49,6 +49,10 @@ app.get('/about', function (req, res) {
 app.post('/send-email', (req, res) => {
     const { name, email, message } = req.body;
 
+    if (!name || !email || !message || name.contains("undefined")){
+        return;
+    }
+
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {

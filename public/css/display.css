@@ -134,6 +134,14 @@ body {
     text-align: center;
 }
 
+.modal-title {
+    text-align: center;
+}
+
+.modal-body{
+    text-align: center;
+}
+
 
 /* DESKTOP VIEW */
 @media only screen and (min-width: 768px) {
@@ -216,6 +224,12 @@ body {
         transition: transform 0.3s ease;
         cursor: pointer;
         padding-bottom: 5px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
 
     .gallery-image:hover {

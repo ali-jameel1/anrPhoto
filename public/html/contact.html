@@ -93,6 +93,10 @@
             var email = document.getElementById('email').value;
             var message = document.getElementById('message').value;
 
+            if (!name || !email || !message || name.contains("undefined")){
+                return;
+            }
+
             fetch('/send-email', {
                 method: 'POST',
                 headers: {

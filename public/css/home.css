@@ -101,14 +101,6 @@ body {
     display: block;
 }
 
-.slider-image[alt="Image 2"] {
-    filter: brightness(1);
-}
-
-.slider-image:hover {
-    filter: brightness(1);
-}
-
 .about-section {
     padding-right: 20px;
     text-align: center;
@@ -209,6 +201,18 @@ body {
 
 /* DESKTOP VIEW */
 @media only screen and (min-width: 768px) {
+    .mobile-home {
+        display: none;
+    }
+
+    .slider-image[alt="Image 2"] {
+        filter: brightness(1);
+    }
+    
+    .slider-image:hover {
+        filter: brightness(1);
+    }
+
     .navbar {
         display: none;
     }
@@ -254,6 +258,10 @@ body {
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 768px) {
+    .mobile-home {
+        display: block;
+    }
+
     .main-container-desk {
         display: none;
     }
@@ -262,8 +270,16 @@ body {
         display: none;
     }
 
-    .slider-image {
+    .home-image {
         filter: brightness(1);
+    }
+
+    .home-image {
+        box-shadow: inset 0 0 30px 10px rgba(0, 0, 0, 0.5); 
+        cursor: pointer;
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
     .navbar-nav {
@@ -306,4 +322,39 @@ body {
         max-width: 100%;
         height: auto;
     }
+
+    .slider-content {
+        margin: 20px auto;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 20px;
+        background-color: #f5f1ee;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .slick-carousel {
+        display: none;
+    }
+
+    .gallery-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        padding-bottom: 5px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .gallery-image:hover {
+        transform: scale(1.05);
+    } 
 }
